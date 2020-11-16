@@ -1,0 +1,88 @@
+
+@-ms-viewport {
+        width: device-width;
+}
+
+@viewport {
+        width: device-width;
+}
+/**
+ * >= 320px 
+ */
+body{
+    padding: 30px;
+    position: relative;
+}
+#play-box{
+    border: 1px solid #ccc;
+    height: 50vh;
+    overflow: hidden;
+}
+#area{
+    height: 100%;
+    position: relative;
+}
+#area.start:after,
+#area.shadow:after{
+    content: 'start';
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background: #ccc;
+    z-index: 3;
+    position: relative;
+    font-size: 100px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+}
+#area.shadow:after{
+    content: 'pause';
+}
+.start, .shadow{display: table;width: 100%;}
+.boxes{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 3;
+/*    transform: rotate(45deg); */
+}
+.boxes[color="red"]{background: red;}
+.boxes[color="yellow"]{background: yellow;}
+.boxes[color="green"]{background: green;}
+.boxes[color="blue"]{background: blue;}
+.boxes.move{
+    position: absolute;
+}
+.start_button, .stop_button{
+    font-size: 16px;
+}
+.seconds, .stop_seconds{
+    display: inline-block;
+    font-size: 24px;
+}
+.error_mes,
+.empty{position: relative;}
+.empty:before,
+.error_mes:before{
+    content: 'Только символы англ алфавита!';
+    position: absolute;
+    background: #fff;
+    border: 1px solid red;
+    top: -26px;
+}
+.empty:before{
+    content: 'Заполните поле!';
+}
+.end{
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 400px;
+    height: 200px;
+    z-index: 5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
